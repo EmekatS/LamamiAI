@@ -9,17 +9,21 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         body{
             font-family: "Poppins";
+            background-color: black;
         }
         .bold-text{
             font-weight: bold;
         }
         .curvacious{
-            border-radius: 20px;
+            border-radius: 10px;
             transition: all .9s;
         }
         .curvacious:hover{
             background-color: #ba68c8 !important;
             border-radius: 0px;
+        }
+        .long-text{
+            color: gray;
         }
         main video{
             position: relative;
@@ -27,7 +31,20 @@
             top: 0;
             width: 900px;
         }
-        .slider .indicators .indicator-item.active {
+        .anim::after{
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #4a148c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        .anim:hover::after{
+            width: 100%;
+        }
+        .sliders .indicators .indicator-item.active {
             background-color: #4a148c;
         }
         .branches{
@@ -36,28 +53,78 @@
         .branches .row .col:hover{
             filter: none;
         }
+        .sliders{
+            width: 100%;
+            height: var(--height);
+            overflow: hidden;
+            mask-image: linear-gradient(
+                to right,
+                transparent,
+                #000 10% 90%,
+                transparent
+            );
+            max-height: 40px;
+        }
+        .sliders .list{
+            display: flex;
+            width: 100%;
+            min-width: calc(var(--width) * var(--quantity));
+            position: relative;
+        }
+        .sliders .list .item{
+            width: var(--width);
+            height: var(--height);
+            position: absolute;
+            left: 100%;
+            animation: autoRun 10s linear infinite;
+            transition: filter 0.5s;
+            animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) )!important;
+        }
+        .sliders .list .item img{
+            width: 100%;
+        }
+        @keyframes autoRun{
+            from{
+                left: 100%;
+            }to{
+                left: calc(var(--width) * -1);
+            }
+        }
+        .sliders:hover .item{
+            animation-play-state: paused!important;
+            filter: grayscale(1);
+        }
+        .sliders .item:hover{
+            filter: grayscale(0);
+        }
+        .sliders[reverse="true"] .item{
+            animation: reversePlay 10s linear infinite;
+        }
+        @keyframes reversePlay{
+            from{
+                left: calc(var(--width) * -1);
+            }to{
+                left: 100%;
+            }
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
     <header>
         <div class="navbar-fixed">
-            <nav class="white">
+            <nav class="black">
                 <div class="container">
                     <div class="row">
                         <div class="col s2 l2">
-                            <a href="./index.html" class="brand-logo black-text purple-text text-darken-4 bold-text">Lamami AI <i class="material-icons suffix">adb</i></a>
+                            <a href="./index.html" class="brand-logo black-text purple-text text-darken-4 bold-text"><img src="./image/logo.png" style="max-width: 150px; margin-top: -40px;"></a>
                         </div>
-                        <div class="col s8 l8 pull-l2">
                             <ul class="right">
-                                <li><a href="" class="purple-text text-darken-4 tooltipped" data-position="left" data-tooltip="Bots"><i class="material-icons">adb</i></a></li>
-                                <li><a href="" class="purple-text text-darken-4 tooltipped" data-position="bottom" data-tooltip="services"><i class="material-icons">mood</i></a></li>
-                                <li><a href="" class="purple-text text-darken-4 tooltipped" data-position="right" data-tooltip="enquire"><i class="material-icons">pets</i></a></li>
+                                <li><a href="" class="white-text text-darken-4 tooltipped" data-position="left" data-tooltip="Bots"><i class="material-icons">adb</i></a></li>
+                                <li><a href="" class="white-text text-darken-4 tooltipped" data-position="bottom" data-tooltip="services"><i class="material-icons">mood</i></a></li>
+                                <li><a href="" class="white-text text-darken-4 tooltipped" data-position="bottom" data-tooltip="enquire"><i class="material-icons">pets</i></a></li>
+                                <li><a href="" class="white-text text-darken-4 tooltipped" data-position="right" data-tooltip="search"><i class="material-icons">search</i></a></li>
                             </ul>
-                        </div>
-                        <div class="col s2 l2 push-l1" style="margin-top: -60px;">
-                            <li><a href="" class="purple-text text-darken-4"><i class="material-icons">search</i></a></li>
-                        </div>
                     </div>
                 </div>
             </nav>
@@ -71,108 +138,178 @@
                         <div class="caption center-align">
                             <div class="content">
                                 <h2 class="white-text bold-text">Welcome to LamamiAI</h2>
-                                <h4 class="white-text" style="margin-top: -20px;">Find your perfect AI</h4>
-                                <a href="" class="btn btn-large purple darken-4 white-text curvacious" style="width: 500px;">Get Started</a><br>
+                                <h4 class="white-text" style="margin-top: -20px;">Find your <span class="f-auto purple-text bold-text text-darken-4"></span></h4>
+                                <a href="" class="btn btn-large purple darken-4 white-text curvacious waves-effect" style="width: 250px; margin-right: 10px;">Get Started</a>
+                                <a href="" class="btn btn-large purple darken-4 white-text curvacious waves-effect" style="width: 400px;">Book a Demo</a><br>
                                 <br>
                                 <span><i class="material-icons" style="font-size: 4rem;">android</i></span>
                             </div>
                         </div>
                     </li>
                     <li class="black">
-                        <video autoplay muted loop>
+                        <video autoplay muted loop style="width: 100%;">
                             <source src="./image/slide2.mp4" type="video/mp4">
                         </video>
                         <div class="caption center-align">
                             <div class="content">
                                 <h2 class="white-text bold-text">Find your AI Powered Solution</h2>
+                                <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eveniet laboriosam nisi similique excepturi non labore blanditiis facilis ad possimus sapiente neque sit voluptatum, quo in obcaecati ducimus officiis aspernatur.</p>
                                 <span><i class="material-icons" style="font-size: 4rem;">adb</i></span>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-        <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
-            <div class="divider"></div>
+        
+        <div class="sliders" style="
+            --width: 200px;
+            --height: 50px;
+            --quantity: 10;
+        ">
+            <div class="list">
+                <div class="item" style="--position: 1"><img src="./image/sliders1_1.png" alt=""></div>
+                <div class="item" style="--position: 2"><img src="./image/sliders1_2.png" alt=""></div>
+                <div class="item" style="--position: 3"><img src="./image/sliders1_3.png" alt=""></div>
+                <div class="item" style="--position: 4"><img src="./image/sliders1_4.png" alt=""></div>
+                <div class="item" style="--position: 5"><img src="./image/sliders1_5.png" alt=""></div>
+                <div class="item" style="--position: 6"><img src="./image/sliders1_6.png" alt=""></div>
+                <div class="item" style="--position: 7"><img src="./image/sliders1_7.png" alt=""></div>
+                <div class="item" style="--position: 8"><img src="./image/sliders1_8.png" alt=""></div>
+                <div class="item" style="--position: 9"><img src="./image/sliders1_9.png" alt=""></div>
+                <div class="item" style="--position: 10"><img src="./image/sliders1_10.png" alt=""></div>
+            </div>
         </div>
-        <div class="container">
+
+        <div class="container" style="margin-top: 200px; margin-bottom: 200px;">
             <div class="row">
-                <div class="col s12 l6">
-                    <video autoplay loop muted nocontrols style="width: 500px; height: 300px;">
-                        <source src="./image/interview.mp4" type="video/mp4">
-                    </video>
+                <div class="col s12 l6 center">
+                    <h3 class="white-text">Frontier AI Research</h3>
+                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis error autem consequuntur provident quaerat, ea repudiandae ducimus nihil cum! Laudantium.</p>
+                    <a href="" class="btn curvacious waves-effect purple darken-4 white-text">See more</a>
+                    <a href="" class="btn curvacious waves-effect purple darken-4 white-text">Read manual</a>
                 </div>
-                <div class="col 12 l6">
-                    <h5 class="bold-text purple-text text-darken-4">Our Vision</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ad eum eveniet unde perferendis doloribus voluptas aut eius! Fugit deleniti facilis soluta ea quibusdam distinctio non autem ipsam, aliquid totam.</p>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, esse possimus! Odit libero, eligendi amet incidunt et debitis architecto quasi.</p>
+                <div class="col s12 l6 center">
+                    <h3 class="white-text">Generative AI</h3>
+                    <p class="center long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis error autem consequuntur provident quaerat, ea repudiandae ducimus nihil cum! Laudantium.</p>
+                    <a href="" class="btn curvacious waves-effect purple darken-4 white-text">Use Demo</a>
+                </div>
+            </div>
+        </div>        
+
+        <div class="container" style="margin-top: 200px; margin-bottom: 200px;">
+            <div class="row">
+                <h2 class="white-text bold-text center"><span class="purple-text text-darken-4">AI</span> Research</h2>
+                <div class="col s6 l4">
+                    <div class="card black">
+                        <div class="card-content">
+                            <h5 class="anim"><a href="" class="white-text bold-text">Lorem Ipsum
+                                <a href="" class="btn btn-floating btn-small purple darken-4 white-text"><i class="material-icons">add</i></a>
+                            </a>
+                            </h5>
+                            <p class="long-text">Read research on "Lorem Ipsum"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6 l4">
+                    <div class="card black">
+                        <div class="card-content">
+                            <h5 class="anim"><a href="" class="white-text bold-text">Lorem Ipsum
+                                <a href="" class="btn btn-floating btn-small purple darken-4 white-text"><i class="material-icons">add</i></a>
+                            </a>
+                            </h5>
+                            <p class="long-text">Read research on "Lorem Ipsum"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s6 l4">
+                    <div class="card black">
+                        <div class="card-content">
+                            <h5 class="anim"><a href="" class="white-text bold-text">Lorem Ipsum
+                                <a href="" class="btn btn-floating btn-small purple darken-4 white-text"><i class="material-icons">add</i></a>
+                            </a>
+                            </h5>
+                            <p class="long-text">Read research on "Lorem Ipsum"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="container">
+                        <a href="" class="btn btn-large purple darken-4 curvacious waves-effect white-text" style="width: 100%; margin-top: 30px;">Read more Research</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
-            <div class="divider"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 l6" style="margin-bottom: 70px;">
+                    <video autoplay loop nocontrols muted style="max-width: 350px;">
+                        <source src="./image/interview.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col s12 l6" style="margin-top: -50px; margin-bottom: 70px;">
+                    <h3 class="white-text bold-text"><span class="purple-text text-darken-4">Our</span> Vision</h3>
+                    <p class="long-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem labore quos, minus facere nostrum molestias totam! Aspernatur mollitia vitae velit.</p>
+                    <br>
+                    <p class="long-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat mollitia perferendis, laboriosam quam necessitatibus labore corrupti odit possimus unde iusto.</p>
+                    <br>
+                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, quaerat.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l6" style="margin-bottom: 70px;">
+                    <h3 class="white-text bold-text"><span class="purple-text text-darken-4">Our</span> Goal</h3>
+                    <p class="long-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis aperiam vero laudantium similique deserunt maiores adipisci quasi atque tenetur voluptatem soluta, nihil ipsa, officiis aut voluptate perferendis placeat ab! Rerum unde, quidem corporis excepturi minima ducimus ad itaque, similique ipsam, iste expedita ratione libero quibusdam laboriosam quaerat quo? Officia, laboriosam?</p>
+                </div>
+                <div class="col s12 l6" style="margin-bottom: 70px;">
+                    <video autoplay loop nocontrols muted style="max-width: 450px; margin-top: 30px;">
+                        <source src="./image/goal.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
         </div>
-        <div class="bots" style="background-color: rgb(240, 240, 240);">
+
+        <div class="bots">
             <div class="container" style="padding: 20px 0px 20px 0px">
-                <h3 class="purple-text text-darken-4 bold-text center-align">Meet Our Bots <i class="material-icons" style="font-size: 2.5rem;">adb</i></h3>
+                <h3 class="white-text bold-text center-align">Meet the <span class="purple-text text-darken-4">TEAM</span></h3>
                 <div class="row">
                     <div class="col s12 l4">
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header">Melody <i class="material-icons">audiotrack</i></div>
-                                <div class="collapsible-body">
-                                    <span>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.
-                                    </span>
+                        <ul class="collapsible popout center">
+                            <li class="active">
+                                <div class="collapsible-header black"><h5 class="white-text bold-text">Seth</h5></div>
+                                <div class="collapsible-body black">
+                                    <img src="./image/seth.PNG" style="height: 270px;" class="center">
+                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="col s12 l4">
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header">Dave <i class="material-icons">face</i></div>
-                                <div class="collapsible-body">
-                                    <span>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.
-                                    </span>
+                        <ul class="collapsible popout center">
+                            <li class="active">
+                                <div class="collapsible-header black"><h5 class="white-text bold-text">Brendan</h5></div>
+                                <div class="collapsible-body black">
+                                    <img src="./image/brendan.jpg" style="max-width: 200px;" class="center">
+                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="col s12 l4">
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header">Hades <i class="material-icons">brightness_low</i></div>
-                                <div class="collapsible-body">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
+                        <ul class="collapsible popout center">
+                            <li class="active">
+                                <div class="collapsible-header black"><h5 class="white-text bold-text">Joshua</h5></div>
+                                <div class="collapsible-body black">
+                                    <img src="./image/joshua.jpg" class="center" style="max-width: 150px;">
+                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="container">
                         <div class="container">
-                            <a href="" class="btn btn-large purple darken-4 curvacious white-text" style="width: 100%; margin-top: 20px;">See More Bots</a>
+                            <a href="" class="btn btn-large purple darken-4 curvacious waves-effect white-text" style="width: 100%; margin-top: 20px;">Meet the whole team</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container" style="margin-top: 50px; margin-bottom: 50px;">
-            <div class="divider"></div>
-        </div>
-        <div class="container">
-            <h3 class="black-text text-darken-4 bold-text">LamamiAI - <span class="purple-text text-darken-4 auto"></span></h3>
-            <div class="branches">
-                <div class="row">
-                    <div class="col s6 l4">
-                        <img src="./image/business.jpg" alt="" class="responsive-img">
-                    </div>
-                    <div class="col s6 l4">
-                        <img src="./image/business.jpg" alt="" class="responsive-img">
-                    </div>
-                    <div class="col s6 l4">
-                        <img src="./image/business.jpg" alt="" class="responsive-img">
                     </div>
                 </div>
             </div>
@@ -183,17 +320,26 @@
     <script>
         $(document).ready(function(){
             $('.slider').slider({
-                height: 430,
-                interval: 5000
+                height: 500,
+                interval: 12000,
+                indicators: false,
             });
                 $('.tooltipped').tooltip();
                 $(".collapsible").collapsible();
+                $('.carousel').carousel();
         });
     </script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         let typed = new Typed(".auto",{
             strings : ["for school!", "for business!", "for everything!"],
+            typeSpeed : 100,
+            backSpeed : 50,
+            backDelay : 2000,
+            loop : true,
+        })
+        let type = new Typed(".f-auto",{
+            strings : ["GenerativeAI", "EnterpriseAI", "PerfectAI"],
             typeSpeed : 100,
             backSpeed : 50,
             backDelay : 2000,
