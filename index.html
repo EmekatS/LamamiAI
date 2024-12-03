@@ -44,6 +44,27 @@
         .anim:hover::after{
             width: 100%;
         }
+        nav ul li a {
+            font-size: none;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #4a148c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+            nav ul li a:hover::after {
+            width: 100%;
+        }
+
         .sliders .indicators .indicator-item.active {
             background-color: #4a148c;
         }
@@ -107,6 +128,34 @@
                 left: 100%;
             }
         }
+        .sexy{
+            position: relative;
+        }
+        .sexy::after, .sexy::before{
+            content: " ";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            height: 100%;
+            width: 300px;
+            background-color: red;
+            z-index: -10;
+            padding: 156px;
+            border-radius: 30px;
+            background-image: conic-gradient(#4a148c, slateblue, #ba68c8);
+        }
+        .sexy::before{
+            filter: blur(120px);
+            /* opacity: 0.5; */
+        }
+        .input-field input:focus{
+            border-bottom: 1px solid #4a148c !important;
+            box-shadow: 0 1px 0 0 #4a148c !important;
+        }
+        .input-field .prefix.active, label.active{
+            color: #4a148c !important;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -119,13 +168,17 @@
                         <div class="col s2 l2">
                             <a href="./index.html" class="brand-logo black-text purple-text text-darken-4 bold-text"><img src="./image/logo.png" style="max-width: 150px; margin-top: -40px;"></a>
                         </div>
+                        <div class="col l8 pull-l1">
                             <ul class="right">
                                 <li><a href="#about" class="white-text text-darken-4 scrollspy">About</a></li>
                                 <li><a href="#solutions" class="white-text text-darken-4 scrollspy">Solutions</a></li>
-                                <li><a href="#for" class="white-text text-darken-4 scrollspy">for you</a></li>
-                                <li><a href="" class="btn btn-small purple darken-4 white-text">Book a Demo</a></li>
-                                <li><a href="" class="btn btn-small btn-floating purple darken-4 white-text tooltipped" data-position="bottom" data-tooltip="Account"><i class="material-icons">person</i></a></li>
+                                <li><a href="#for" class="white-text text-darken-4 scrollspy">For you</a></li>
+                                <li><a href="#for" class="white-text text-darken-4 scrollspy">Resources</a></li>
                             </ul>
+                        </div>
+                        <div class="col l2">
+                            <a href="" class="purple darken-4 white-text btn btn-small curvacious">Book a Demo</a>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -162,7 +215,7 @@
                 </ul>
             </div>
 
-        <div class="container" id="about" style="margin-top: 200px; margin-bottom: 200px;">
+        <div class="container" id="about" style="margin-top: 200px;">
             <div class="row">
                 <div class="col s12 l6" style="margin-bottom: 70px;">
                     <video autoplay loop nocontrols muted style="max-width: 350px;">
@@ -193,23 +246,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="container" style="margin-top: 200px; margin-bottom: 200px;">
-            <div class="row">
-                <div class="col s12 l6 center">
-                    <h3 class="white-text">Frontier AI Research</h3>
-                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis error autem consequuntur provident quaerat, ea repudiandae ducimus nihil cum! Laudantium.</p>
-                    <a href="" class="btn curvacious waves-effect purple darken-4 white-text">See more</a>
-                    <a href="" class="btn curvacious waves-effect purple darken-4 white-text">Read manual</a>
-                </div>
-                <div class="col s12 l6 center">
-                    <h3 class="white-text">Generative AI</h3>
-                    <p class="center long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis error autem consequuntur provident quaerat, ea repudiandae ducimus nihil cum! Laudantium.</p>
-                    <a href="" class="btn curvacious waves-effect purple darken-4 white-text">Use Demo</a>
-                </div>
-            </div>
-        </div>        
-
+        
         <div class="container" id="solutions" style="margin-top: 200px; margin-bottom: 150px;">
             <div class="row">
                 <h2 class="white-text bold-text center">Our<span class="purple-text text-darken-4"> AI Chatbot </span>Solutions</h2>
@@ -262,7 +299,7 @@
 
         <div class="container" id="for" style="margin-top: 0px; margin-bottom: 100px;">
             <h3 class="white-text bold-text">LamamiAI -  <span class="purple-text text-darken-4 auto"></span></h3>
-            <p class="long-text">AI Solution to everyindustry!</p>
+            <p class="long-text">AI Solution to every industry!</p>
             <div class="row">
                 <div class="col l6">
                     <div class="carousel">
@@ -288,7 +325,7 @@
         </div>
 
         <div class="bots">
-            <div class="container" style="padding: 20px 0px 20px 0px">
+            <div class="container" style="padding: 20px 0px 20px 0px" style="margin-bottom: 300px;">
                 <h3 class="white-text bold-text center">Meet the <span class="purple-text text-darken-4">TEAM</span></h3>
                 <p class="long-text center">Led by a team of experienced professionals, including founder Seth Wealth Esin, Lamami AI
                     is dedicated to pushing the boundaries of AI technology to meet the evolving needs of our
@@ -339,6 +376,156 @@
                 </div>
             </div>
         </div>
+
+        <div class="container" style="margin-top: 150px; margin-bottom: 200px;">
+            <h3 class="white-text bold-text center">Request a <span class="purple-text text-darken-4 bold-text">Demo</span></h3>
+            <div class="row">
+                <div class="col s12 l6">
+                    <h4 class="white-text bold-text">Meet <span class="purple-text bold-text text-darken-4">Melody</span></h4>
+                    <p class="long-text">See how Lamami AI can transform your communication processes. Schedule a personalized
+                        demo to experience our chatbot’s features and functionality in action.</p>
+                    <br>
+                    <p class="long-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis eos ut, culpa nemo iure ipsam. Nesciunt cum quam sint labore.</p>
+                </div>
+                <div class="col s12 l6 black sexy" style="border-radius: 40px;">
+                    <form action="">
+                        <h5 class="purple-text bold-text center text-darken-4">Melody <i class="material-icons">audiotrack</i> </h5>
+                        <p class="long-text center">Fill out the form below to schedule your free demo and see how our solutions can meet your
+                            needs."</p>
+                        <div class="row">
+                            <div class="col s12 input-field">
+                                <div class="container">
+                                    <label for="ask" class="purple-text text-darken-4 bold-text">Ask <span class="auto-ask white-text"></span></label>
+                                    <input type="text" id="ask" class="ask white-text">
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="col s12 input-field">
+                                    <a href="" class="btn btn-large curvacious purple darken-4 white-text" style="width: 100%;">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-bottom: 150px;">
+            <h3 class="white-text bold-text center">Lamami <span class="purple-text text-darken-4">BLOG</span></h3>
+            <h5 class="white-text bold-text center">AI Insights & Industry News</h5>
+            <p class="long-text center" style="margin-bottom: 100px;">Stay up to date with the latest in AI technology and chatbot solutions. Read our blog for tips, case studies, and articles on how AI is transforming communication across industries.</p>
+            <div class="row">
+                <div class="col s12 l4 center">
+                    <div class="cardblack">
+                        <div class="card-content">
+                            <h6 class="white-text bold-text">AI Chatbots Revolutionizing School Communication</h6>
+                            <p class="long-text">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+                            <a href="" class="btn btn-small btn-floating purple darken-4 white-text tooltipped" data-position="bottom" data-tooltip="Read more"><i class="material-icons">archive</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l4 center">
+                    <div class="cardblack">
+                        <div class="card-content">
+                            <h6 class="white-text bold-text">5 Ways Chatbots Can Boost Your Customer Service</h6>
+                            <p class="long-text">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+                            <a href="" class="btn btn-small btn-floating purple darken-4 white-text tooltipped" data-position="bottom" data-tooltip="Read more"><i class="material-icons">archive</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l4 center">
+                    <div class="cardblack">
+                        <div class="card-content">
+                            <h6 class="white-text bold-text">The Future of AI in Nigeria’s Education Sector</h6>
+                            <p class="long-text">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+                            <a href="" class="btn btn-small btn-floating purple darken-4 white-text tooltipped" data-position="bottom" data-tooltip="Read more"><i class="material-icons">archive</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-bottom: 150px;">
+            <h3 class="white-text bold-text center">Contact <span class="purple-text text-darken-4">US</span></h3>
+            <h5 class="white-text bold-text center">Get in touch with us</h5>
+            <p class="long-text center" style="margin-bottom: 100px;">Have questions? Ready to get started with Lamami AI’s chatbot solutions? We’re here to help. Reach out to us today, and we’ll be happy to assist you."</p>
+            <div class="row">
+                <div class="col s12 center">
+                    <form action="">
+                        <h3 class="white-text bold-text">Send Feedback</h3>
+                        <p class="long-text">Fill out the form below, and we’ll get back to you as soon as possible.</p>
+                        <div class="row">
+                            <div class="col s12 input-field">                
+                                <label for="feedback"><span class="auto-feedback white-text text-darken-4 bold-text"></span></label>
+                                <input type="text" id="feedback">
+                            </div>
+                            <div class="col s12 input-field">
+                                <a href="" class="btn btn-large purple darken-4 white-text bold-text curvacious" style="width: 100%;">Submit</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s12 l6 center">
+                    <div class="cardblack">
+                        <div class="card-content">
+                            <h4 class="white-text bold-text"><span class="purple-text text-darken-4">Privacy</span> Policy</h4>
+                            <h6 class="white-text bold-text">Your Privacy Matters to Us</h6>
+                            <p class="long-text">At Lamami AI, we take your privacy seriously. This policy explains how we collect, use, and
+                                protect your personal data when you use our website or services.</p>
+                            <a href="#privacy-policy" class="btn btn-small btn-floating purple darken-4 white-text tooltipped modal-trigger" data-position="bottom" data-tooltip="Read Privacy Policy"><i class="material-icons">archive</i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 l6 center">
+                    <div class="cardblack">
+                        <div class="card-content">
+                            <h4 class="white-text bold-text"><span class="purple-text text-darken-4">Terms</span> of Service</h4>
+                            <h6 class="white-text bold-text">LamamiAI's Terms of Service</h6>
+                            <p class="long-text">By using our services, you agree to the terms outlined here. Please read through our terms
+                                carefully before proceeding.
+                                </p>
+                            <a href="#terms-of-service" class="btn btn-small btn-floating purple darken-4 white-text tooltipped modal-trigger" data-position="bottom" data-tooltip="Read Terms of Service"><i class="material-icons">archive</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal black center" id="privacy-policy">
+            <div class="container">
+                <div class="modal-content">
+                    <h4 class="white-text bold-text"><span class="purple-text text-darken-4">LAMAMI-AI's</span> Privacy Policy</h4>
+                    <p class="long-text">Lamami AI values your privacy and is committed to protecting your personal data. This
+                        Privacy Policy outlines how we collect, use, store, and protect the information you provide
+                        while using our services.
+                        </p>
+                    <h5 class="white-text bold-text">Data Collection</h5>
+                    <p class="long-text">We collect the following data:
+                    </p>
+                    <h6 class="purple-text text-darken-4 bold-text">Personal Information</h6>
+                    <p class="long-text">Name, email, phone number, and organization details</p>
+                    <h6 class="purple-text text-darken-4 bold-text">Interaction Data</h6>
+                    <p class="long-text">Chat history, user feedback, and feature usage metrics.
+                    </p>
+                    <h6 class="purple-text text-darken-4 bold-text">Payment Information</h6>
+                    <p class="long-text">(If applicable) Securely processed by third-party providers.
+                    </p>
+                    <h5 class="white-text bold-text">Data Usage</h5>
+                    <p class="long-text">We use your data to:
+                    </p>
+                    <p class="long-text bold-text">Deliver and improve our chatbot services.</p>
+                    <p class="long-text bold-text">Provide customer support and updates.
+                    </p>
+                    <p class="long-text bold-text">Analyze performance and user interactions.
+                    </p>
+                    <h5 class="white-text bold-text">Data Storage</h5>
+                    <p class="long-text bold-text">Data is securely stored on encrypted servers compliant with global data protection
+                        standards.
+                        </p>
+                    <p class="long-text bold-text">User data is retained only as long as necessary for service delivery or as required by law.
+
+                        </p>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="./JS/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -353,6 +540,7 @@
                 $(".collapsible").collapsible();
                 $('.carousel').carousel();
                 $('.scrollspy').scrollSpy();
+                $('.modal').modal();
         });
     </script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -362,6 +550,20 @@
             typeSpeed : 100,
             backSpeed : 50,
             backDelay : 2000,
+            loop : true,
+        })
+        let type = new Typed(".auto-ask",{
+            strings : ["School fees", "Timetable", "Anything."],
+            typeSpeed : 50,
+            backSpeed : 50,
+            backDelay : 800,
+            loop : true,
+        })
+        let types = new Typed(".auto-feedback",{
+            strings : ["Complaints?", "Suggestions?", "Anything."],
+            typeSpeed : 50,
+            backSpeed : 50,
+            backDelay : 800,
             loop : true,
         })
     </script>
