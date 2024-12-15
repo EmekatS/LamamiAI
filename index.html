@@ -85,7 +85,6 @@
         }
         .sexy::before{
             filter: blur(120px);
-            /* opacity: 0.5; */
         }
         .input-field input:focus{
             border-bottom: 1px solid #4a148c !important;
@@ -97,8 +96,21 @@
         .footer-link:hover{
             color: white;
         }
+        ::-webkit-scrollbar{
+            width: 12px;
+            background: black;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(transparent, #4a148c);
+            border-radius: 10px;
+            height: 120px;
+            transition: all .5s;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(transparent, #ba68c8);
+        }
     </style>
-    <title>Document</title>
+    <title>Lamami-AI</title>
 </head>
 <body>
     <header>
@@ -113,21 +125,31 @@
                             <ul class="right hide-on-med-and-down">
                                 <li><a href="#about" class="white-text text-darken-4 scrollspy">About</a></li>
                                 <li><a href="#solutions" class="white-text text-darken-4 scrollspy">Solutions</a></li>
-                                <li><a href="#for" class="white-text text-darken-4 scrollspy">For you</a></li>
+                                <li><a href="./user-dashboard.html" class="white-text text-darken-4 scrollspy">Dashboard</a></li>
                                 <li><a href="#contact" class="white-text text-darken-4 scrollspy">Resources</a></li>
                                 <li><a href="#" class="white-text text-darken-4 scrollspy">Pricing</a></li>
                             </ul>
                         </div>
                         <div class="col l2">
                             <a href="#demo" class="purple darken-4 white-text btn btn-small curvacious scrollspy hide-on-med-and-down">Book a Demo</a>
+                            <a href="#sidenav" class="hide-on-large-only sidenav-trigger"><i class="material-icons">menu</i></a>
                         </div>
                     </div>
                 </div>
             </nav>
         </div>
+        <ul class="sidenav black" id="sidenav">
+            <li><a href="#about" class="white-text text-darken-4 scrollspy">About</a></li>
+            <li><a href="#solutions" class="white-text text-darken-4 scrollspy">Solutions</a></li>
+            <li><a href="./user-dashboard.html" class="white-text text-darken-4 scrollspy">Dashboard</a></li>
+            <li><a href="#contact" class="white-text text-darken-4 scrollspy">Resources</a></li>
+            <li><a href="#" class="white-text text-darken-4 scrollspy">Pricing</a></li>
+            <li><a href="#" class="white-text btn btn-large purple darken-4 curvacious">Book A Demo</a></li>
+            <li><a href="#" class="white-text btn btn-large purple darken-4 curvacious">Sign-Up</a></li>
+        </ul>
     </header>
     <main>
-            <div class="slider hide-on-">
+            <div class="slider">
                 <ul class="slides">
                     <li class="black">
                         <img src="" alt="">
@@ -136,9 +158,9 @@
                                 <h3 class="white-text bold-text hide-on-med-and-down">Transforming Communication with AI</h3>
                                 <h3 class="white-text bold-text hide-on-large-only">AI Powered</h3>
                                 <p class="long-text" style="margin-top: -10px;">Empower Your Business and School with Seamless Automation<span class="purple-text bold-text text-darken-4"></span></p>
-                                <a href="" class="btn btn-large purple darken-4 white-text curvacious waves-effect" style="width: 250px; margin-right: 10px;">Learn More</a>
+                                <a href="./auth/authentication.html" class="btn btn-large purple darken-4 white-text curvacious waves-effect" style="width: 250px; margin-right: 10px;">Get Started</a>
                                 <a href="" class="btn btn-large purple darken-4 white-text curvacious waves-effect hide-on-med-and-down" style="width: 400px;">Request a Demo</a><br> <br>
-                                <a href="" class="btn btn-large purple darken-4 white-text curvacious waves-effect" style="width: 250px;">Request a Demo</a><br>
+                                <a href="" class="btn btn-large purple darken-4 white-text curvacious waves-effect hide-on-large-only" style="width: 250px;">Request a Demo</a><br>
                                 <br>
                                 <span><i class="material-icons" style="font-size: 4rem;">android</i></span>
                             </div>
@@ -265,53 +287,18 @@
             </div>
         </div>
 
-        <div class="bots">
-            <div class="container" style="padding: 20px 0px 20px 0px" style="margin-bottom: 300px;">
-                <h3 class="white-text bold-text center">Meet the <span class="purple-text text-darken-4">TEAM</span></h3>
-                <p class="long-text center">Led by a team of experienced professionals, including founder Seth Wealth Esin, Lamami AI
-                    is dedicated to pushing the boundaries of AI technology to meet the evolving needs of our
-                    clients. (you will pictures here)
-                    </p>
-                <div class="row">
-                    <div class="col s12 l4">
-                        <ul class="collapsible popout center">
-                            <li>
-                                <div class="collapsible-header black"><h5 class="white-text bold-text">Seth <i class="material-icons">call_made</i></h5></div>
-                                <div class="collapsible-body black">
-                                    <img src="./image/seth.PNG" style="height: 270px;" class="center">
-                                    <h4 class="bold-text purple-text text-darken-4">Founder</h4>
-                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
+        <div class="container">
+            <div class="container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 black sexy center" style="border-radius: 30px;">
+                            <div class="card black">
+                                <!-- <div class="card-image"><img src="./image/seth.PNG" style="border-radius: 50%; max-width: 150px;"></div> -->
+                                <div class="card-content">
+                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta illum autem cupiditate sed obcaecati quod necessitatibus, quaerat nihil! Numquam dolore eaque laboriosam porro sequi totam doloremque ad consequuntur neque ducimus assumenda odit, sint dolor similique laudantium dicta veniam, cumque inventore earum eius nihil error eum cupiditate? Consectetur eos ipsum error. Animi totam porro aut velit obcaecati, ratione voluptatem doloribus laborum!</p>
+                                    <p class="white-text bold-text">-Seth</p>
                                 </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col s12 l4">
-                        <ul class="collapsible popout center">
-                            <li>
-                                <div class="collapsible-header black"><h5 class="white-text bold-text">Brendan <i class="material-icons">call_made</i></h5></div>
-                                <div class="collapsible-body black">
-                                    <img src="./image/brendan.jpg" style="max-width: 200px;" class="center">
-                                    <h4 class="bold-text purple-text text-darken-4">Developer</h4>
-                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col s12 l4">
-                        <ul class="collapsible popout center">
-                            <li>
-                                <div class="collapsible-header black"><h5 class="white-text bold-text">Joshua <i class="material-icons">call_made</i></h5></div>
-                                <div class="collapsible-body black">
-                                    <img src="./image/joshua.jpg" class="center" style="max-width: 150px;">
-                                    <h4 class="bold-text purple-text text-darken-4">Developer</h4>
-                                    <p class="long-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ab cumque voluptates corrupti omnis nobis earum nisi, reiciendis blanditiis repudiandae nulla saepe error sit iusto, sed odio.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="container">
-                        <div class="container">
-                            <a href="" class="btn btn-large purple darken-4 curvacious waves-effect white-text" style="width: 100%; margin-top: 20px;">Meet the whole team</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -390,7 +377,7 @@
             <p class="long-text center" style="margin-bottom: 100px;">Have questions? Ready to get started with Lamami AI’s chatbot solutions? We’re here to help. Reach out to us today, and we’ll be happy to assist you."</p>
             <div class="row" style="margin-top: -80px;">
                 <div class="col s12 l4">
-                    <div class="card black anim center" style="cursor: default;">
+                    <div class="card black center" style="cursor: default;">
                         <div class="card-content">
                             <h4 class="purple-text text-darken-4"><i class="material-icons large">email</i></h4>
                             <h6 class="white-text bold-text">E-Mail</h6>
@@ -399,17 +386,17 @@
                     </div>
                 </div>
                 <div class="col s12 l4">
-                    <div class="card black anim center" style="cursor: default;">
+                    <div class="card black center" style="cursor: default;">
                         <div class="card-content">
                             <h4 class="purple-text text-darken-4"><i class="material-icons large">public</i></h4>
                             <h6 class="white-text bold-text">Office Address</h6>
-                            <p class="long-text bold-text">Opposite Jamb o
+                            <p class="long-text bold-text">Opposite Jamb office
                                 after zenith bank, Bwari, Abuja, Nigeria</p>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 l4">
-                    <div class="card black anim center" style="cursor: default;">
+                    <div class="card black center" style="cursor: default;">
                         <div class="card-content">
                             <h4 class="purple-text text-darken-4"><i class='bx bxl-instagram' style="color: #4a148c; font-size: 84px;"></i></h4>
                             <h6 class="white-text bold-text">Instagram</h6>
@@ -558,7 +545,7 @@
             </div>
         </div>
     </main>
-    <footer class="page-footer black">
+    <footer class="page-footer" style="background-color: rgb(9, 9, 9);">
         <div class="container">
             <div class="row">
                 <div class="col s12 l4">
@@ -607,6 +594,11 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-copyright" style="background-color: rgb(9, 9, 9);">
+                <div class="container center">
+                    <h6 class="bold-text purple-text text-darken-4">&copy;2024 LamamiAI, All rights reserved.</h6>
+                </div>
+            </div>
         </div>
     </footer>
     <script src="./JS/jquery.js"></script>
@@ -623,6 +615,7 @@
                 $('.carousel').carousel();
                 $('.scrollspy').scrollSpy();
                 $('.modal').modal();
+                $('.sidenav').sidenav();
         });
     </script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>

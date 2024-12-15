@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LamamiAI | Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body{
+            font-family: "Poppins";
+            background-color: black;
+            overflow-x: hidden;
+        }
+        .bold-text{
+            font-weight: bold;
+        }
+        .curvacious{
+            border-radius: 10px;
+            transition: all .9s;
+        }
+        .curvacious:hover{
+            background-color: #ba68c8 !important;
+            border-radius: 0px;
+        }
+        .long-text{
+            color: gray;
+        }
+        main video{
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 900px;
+        }
+        .anim::after{
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #4a148c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        .anim:hover::after{
+            width: 100%;
+        }
+        nav ul li a {
+            font-size: none;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #4a148c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+            nav ul li a:hover::after {
+            width: 100%;
+        }
+        .sexy{
+            position: relative;
+        }
+        .sexy::after, .sexy::before{
+            content: " ";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            height: 100%;
+            width: 300px;
+            background-color: red;
+            z-index: -10;
+            padding: 156px;
+            border-radius: 30px;
+            background-image: conic-gradient(#4a148c, slateblue, #ba68c8);
+        }
+        .sexy::before{
+            filter: blur(120px);
+        }
+        .input-field input:focus{
+            border-bottom: 1px solid #4a148c !important;
+            box-shadow: 0 1px 0 0 #4a148c !important;
+        }
+        .input-field .prefix.active, label.active{
+            color: #4a148c !important;
+        }
+        .footer-link:hover{
+            color: white;
+        }
+        ::-webkit-scrollbar{
+            width: 12px;
+            background: black;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(transparent, #4a148c);
+            border-radius: 10px;
+            height: 120px;
+            transition: all .5s;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(transparent, #ba68c8);
+        }
+        .sidenav-items{
+            transition: all .4s;
+        }
+        .logout-item{
+            transition: all .4s;
+        }
+        .sidenav-items:hover{
+            background-color: #4a148c !important;
+            color: white !important;
+        }
+        .logout-item:hover{
+            background-color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="row">
+            <div class="col l3 hide-on-med-and-down" style="background-color: rgb(9, 9, 9); height: 3200px;">
+                <div class="container center section">
+                    <h5 class="white-text bold-text">Hello, Username 👋</h5>
+                    <p class="long-text bold-text">Username123@lamamiAI.com</p>
+                    <nav style="background-color: rgb(9, 9, 9);" class="z-depth-0">
+                        <ul>
+                            <div class="col s12">
+                                <li><a href="#" class="white-text bold-text">Home</a></li>
+                            </div>
+                            <div class="col s12">
+                                <li><a href="#" class="white-text bold-text sidenav-items">Inbox</a></li>
+                            </div>
+                            <div class="col s12">
+                                <li><a href="#" class="white-text bold-text">Teams</a></li>
+                            </div>
+                            <div class="col s12">
+                                <li><a href="#" class="white-text bold-text">Subscriptions</a></li>
+                            </div>
+                            <div class="col s12">
+                                <li><a href="#" class="white-text bold-text">My Account</a></li>
+                            </div>
+                            <div class="col s12">
+                                <li><a href="#" class="red-text text-darken-4 bold-text">Logout</a></li>
+                            </div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col l9 center">
+                <h4 class="white-text text-darken-4 bold-text center">Subscriptions</h4>
+                <div class="navbar-fixed">
+                    <nav class="black">
+                        <div class="row">
+                            <div class="col s12 push-s3 hide-on-med-and-down">
+                                <ul class="center">
+                                    <li><a href="#pricing-plan" class="scrollspy white-text anim">Plan</a></li>
+                                    <li><a href="#add-on" class="scrollspy white-text anim">Add-On</a></li>
+                                    <li><a href="#current-plan" class="scrollspy white-text anim">Current Plan</a></li>
+                                    <li><a href="#invoices" class="scrollspy white-text anim">Invoices</a></li>
+                                </ul>
+                            </div>
+                            <div class="col s12 push-s1 hide-on-large-only">
+                                <ul class="center">
+                                    <li><a href="#pricing-plan" class="scrollspy white-text anim">Plan</a></li>
+                                    <li><a href="#add-on" class="scrollspy white-text anim">Add-On</a></li>
+                                    <li><a href="#current-plan" class="scrollspy white-text anim">Current Plan</a></li>
+                                    <li><a href="#invoices" class="scrollspy white-text anim">Invoices</a></li>
+                                    <li><a href="#" class="sidenav-trigger white-text anim"><i class="material-icons">menu</i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <h6 class="white-text bold-text" id="pricing-plan">Pricing Plans</h6>
+                <div class="row">
+                    <div class="col s12 l4">
+                        <div class="card " style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content center">
+                            <h4 class="white-text bold-text">$5</h4>
+                            <h6 class="white-text">#7,723.50</h6>
+                            <p class="long-text">Little Plan</p>
+                            <br>
+                            <a href="#" class="btn purple white-text darken-4">Select Plan</a>
+                            <br>
+                            <br>
+                            <p class="long-text">This plan includes:</p>
+                            <ul>
+                                <li><p class="long-text"><i class="material-icons">check</i>Monthly 3,000 platform messages</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Monthly 3,000 WhatsApp Conversations</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Unlimited Subscriber/leads</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>5 Team members</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Unified Inbox</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Multi Languages</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Live chat</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>E-Mail Support</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>2048-bit SSL secure connection</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Drip & Broadcast Campaign</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Mobile Apps for agents</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Standard support</p></li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4">
+                        <div class="card sexy" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content center">
+                            <h4 class="white-text bold-text">$20</h4>
+                            <h6 class="white-text">#30,894.01</h6>
+                            <p class="long-text">King Plan</p>
+                            <br>
+                            <a href="#" class="btn purple white-text darken-4">Select Plan</a>
+                            <br>
+                            <br>
+                            <p class="long-text">This plan includes:</p>
+                            <ul>
+                                <li><p class="long-text"><i class="material-icons">check</i>Monthly 3,000 platform messages</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Monthly 3,000 WhatsApp Conversations</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Unlimited Subscriber/leads</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>5 Team members</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Unified Inbox</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Multi Languages</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Live chat</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>E-Mail Support</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>2048-bit SSL secure connection</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Drip & Broadcast Campaign</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Mobile Apps for agents</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Standard support</p></li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content center">
+                            <h4 class="white-text bold-text">Custom</h4>
+                            <h6 class="white-text">choose your plan</h6>
+                            <p class="long-text">Custom Plan</p>
+                            <br>
+                            <a href="#" class="btn purple white-text darken-4">Select Plan</a>
+                            <br>
+                            <br>
+                            <p class="long-text">This plan includes:</p>
+                            <ul>
+                                <li><p class="long-text"><i class="material-icons">check</i>Monthly 3,000 platform messages</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Monthly 3,000 WhatsApp Conversations</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Unlimited Subscriber/leads</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>5 Team members</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Unified Inbox</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Multi Languages</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Live chat</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>E-Mail Support</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>2048-bit SSL secure connection</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Drip & Broadcast Campaign</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Mobile Apps for agents</p></li>
+                                <li><p class="long-text"><i class="material-icons">check</i>Standard support</p></li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="white-text bold-text center" id="add-on" style="margin-top: 100px;">Add-On</h4>
+                <br>
+                <h6 class="white-text center">Messages Add-on</h6>
+                <p class="long-text">Add more messages in your account and enjoy uninterrupted services.</p>
+                <div class="row">
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 1,000 messages</h6>
+                                <h6 class="long-text">1,000 messages</h6>
+                                <h5 class="white-text bold-text">$5/month</h5>
+                                <p class="long-text">#7,723.50</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 5,000 messages</h6>
+                                <h6 class="long-text">5,000 messages</h6>
+                                <h5 class="white-text bold-text">$10/month</h5>
+                                <p class="long-text">#15,447.01</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 10,000 messages</h6>
+                                <h6 class="long-text">10,000 messages</h6>
+                                <h5 class="white-text bold-text">$15/month</h5>
+                                <p class="long-text">#23,170.51</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 1,000,000 messages</h6>
+                                <h6 class="long-text">1,000,000 messages</h6>
+                                <h5 class="white-text bold-text">$120/month</h5>
+                                <p class="long-text">#185,364.08</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h6 class="white-text center">Conversations Add-on</h6>
+                <p class="long-text">Add more conversations in your account and enjoy uninterrupted services.</p>
+                <div class="row">
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 1,000 Conversations</h6>
+                                <h6 class="long-text">1,000 Conversations</h6>
+                                <h5 class="white-text bold-text">$5/month</h5>
+                                <p class="long-text">#7,723.50</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 5,000 Conversations</h6>
+                                <h6 class="long-text">5,000 Conversations</h6>
+                                <h5 class="white-text bold-text">$10/month</h5>
+                                <p class="long-text">#15,447.01</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 10,000 Conversations</h6>
+                                <h6 class="long-text">10,000 Conversations</h6>
+                                <h5 class="white-text bold-text">$20/month</h5>
+                                <p class="long-text">#30,894.01</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 l4 center">
+                        <div class="card" style="background-color: rgb(9, 9, 9); border-radius: 30px;">
+                            <div class="card-content">
+                                <h6 class="white-text bold-text">Pack of 1,000,000 messages</h6>
+                                <h6 class="long-text">1,000,000 messages</h6>
+                                <h5 class="white-text bold-text">$180/month</h5>
+                                <p class="long-text">#278,046.13</p>
+                                <button class="btn btn-small tooltipped btn-floating purple darken-4 white-text" data-position="bottom" data-tooltip="Add to cart"><i class="material-icons">add</i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="white-text bold-text">Cart</h4>
+                <p class="long-text" style="margin-bottom: 50px;">Plans with higher validity will cost you less</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card sexy" style="background-color: rgb(9, 9, 9); border-radius: 30px; height: 350px;">
+                                <div class="card-content">
+                                    <p class="long-text">You have no items in your cart.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h4 class="white-text bold-text" id="current-plan">Current Plan</h4>
+                <p class="long-text" style="margin-bottom: 50px;">Explore, Customize, and Stay In Control of Your Premium Experience.</p>
+                <br>
+                <p class="long-text">No selected plan.</p>
+                <br>
+                <br>
+                <h4 class="white-text bold-text" id="invoices">Invoices</h4>
+                <p class="long-text" style="margin-bottom: 50px;">Your invoice will appear here after you make any purchase</p>
+                <br>
+                <p class="long-text">No payments made</p>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer" style="background-color: rgb(9, 9, 9);">
+        <div class="footer-copyright" style="background-color: rgb(9, 9, 9);">
+            <div class="container center">
+                <h6 class="bold-text purple-text text-darken-4">&copy;2024 LamamiAI, All rights reserved.</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="./JS/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slider({
+                height: 500,
+                interval: 6000,
+                indicators: false,
+            });
+                $('.tooltipped').tooltip();
+                $(".collapsible").collapsible();
+                $('.carousel').carousel();
+                $('.scrollspy').scrollSpy();
+                $('.modal').modal();
+                $('.sidenav').sidenav();
+                $('.dropdown-trigger').dropdown();
+        });
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        let typed = new Typed(".search",{
+            strings : ["Name", "E-Mail", "Phone Number"],
+            typeSpeed : 100,
+            backSpeed : 50,
+            backDelay : 2000,
+            loop : true,
+        })
+    </script>
+</body>
+</html>

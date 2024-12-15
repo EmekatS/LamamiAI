@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body{
+            font-family: "Poppins";
+            background-color: black;
+            overflow-x: hidden;
+        }
+        .bold-text{
+            font-weight: bold;
+        }
+        .curvacious{
+            border-radius: 10px;
+            transition: all .9s;
+        }
+        .curvacious:hover{
+            background-color: #ba68c8 !important;
+            border-radius: 0px;
+        }
+        .long-text{
+            color: gray;
+        }
+        main video{
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 900px;
+        }
+        .anim::after{
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #4a148c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+        .anim:hover::after{
+            width: 100%;
+        }
+        nav ul li a {
+            font-size: none;
+            color: white;
+            text-decoration: none;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: "";
+            height: 3px;
+            width: 0;
+            background: #4a148c;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+            nav ul li a:hover::after {
+            width: 100%;
+        }
+        .sexy{
+            position: relative;
+        }
+        .sexy::after, .sexy::before{
+            content: " ";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            translate: -50% -50%;
+            height: 100%;
+            width: 300px;
+            background-color: red;
+            z-index: -10;
+            padding: 156px;
+            border-radius: 30px;
+            background-image: conic-gradient(#4a148c, slateblue, #ba68c8);
+        }
+        .sexy::before{
+            filter: blur(120px);
+        }
+        .input-field input:focus{
+            border-bottom: 1px solid #4a148c !important;
+            box-shadow: 0 1px 0 0 #4a148c !important;
+        }
+        .input-field .prefix.active, label.active{
+            color: #4a148c !important;
+        }
+        .footer-link:hover{
+            color: white;
+        }
+        ::-webkit-scrollbar{
+            width: 12px;
+            background: black;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: linear-gradient(transparent, #4a148c);
+            border-radius: 10px;
+            height: 120px;
+            transition: all .5s;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background: linear-gradient(transparent, #ba68c8);
+        }
+        form.sign-up{
+            transition: all .4s;
+        }
+        form.sign-in{
+            opacity: 0;
+            pointer-events: none;
+            transition: all .5s;
+        }
+        main.Switch form.sign-in{
+            opacity: 1;
+            pointer-events: all;
+        }
+        main.Switch form.sign-up{
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+    <title>Log-in | LamamiAI</title>
+</head>
+<body>
+    <main>
+        <div class="container center">
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <h3 class="purple-text text-darken-4 bold-text" id="heading">Sign Up</h3>
+                        <p class="long-text">Get started with <span class="purple-text text-darken-4 bold-text">Lamami-AI</span>, by filling out the form below.</p>
+                        <form action="" class="sign-up">
+                            <div class="row">
+                                <div class="col s12 l4 input-field">
+                                    <label for="email" class="white-text bold-text">Enter E-Mail</label>
+                                    <input type="text" id="email">
+                                </div>
+                                <div class="col s12 l4 input-field">
+                                    <label for="password" class="white-text bold-text">Enter Password</label>
+                                    <input type="password" id="password">
+                                </div>
+                                <div class="col s12 l4 input-field">
+                                    <label for="c_password" class="white-text bold-text">Confirm Password</label>
+                                    <input type="password" id="c_password">
+                                </div>
+                                <div class="col s12 input-field">
+                                    <button class="btn btn-large purple darken-4 white-text" style="width: 100%;">Sign-Up</button>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="long-text left">Already have an account? <a href="#" class="white-text toggle t">Sign-In</a></p>
+                    </div>
+                    <form action="" style="position: relative; top: -260px;" class="sign-in">
+                        <div class="row">
+                            <div class="col s12 l6 input-field">
+                                <label class="white-text bold-text" for="e-mail">Enter E-Mail</label>
+                                <input type="email" id="e-mail">
+                            </div>
+                            <div class="col s12 l6 input-field">
+                                <label class="white-text bold-text" for="pass-word">Enter Password</label>
+                                <input type="password" id="pass-word">
+                            </div>
+                            <div class="col s12 input-field">
+                                <button class="btn btn-large purple darken-4 white-text" style="width: 100%;">Sign-In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="con" style="position: relative; top: -170px;">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col l4 push-l1">
+                                <div class="divider" style="background-color: gray; margin-right: -60px"></div>
+                            </div>
+                            <div class="col l4" style="margin-top: -30px;">
+                                <h5 class="white-text">OR</h5>
+                            </div>
+                            <div class="col l4 pull-l1">
+                                <div class="divider" style="background-color: gray; margin-left: -60px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <form action="">
+                            <button class="btn btn-large purple darken-4 white-text" style="width: 100%;">Continue with Google</button>
+                        </form>
+                    </div>
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col l6">
+                                <h6 class="white-text left"><a class="white-text modal-trigger" href="#privacy-policy">Privacy Policy</a></h6>
+                            </div>
+                            <div class="col l6">
+                                <h6 class="white-text right"><a class="white-text modal-trigger" href="#terms-of-service">Terms of Service</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal black center" id="privacy-policy">
+            <div class="container">
+                <div class="modal-content">
+                    <h4 class="purple-text text-darken-4 bold-text">LAMAMI-AI's</h4>
+                    <h5 class="white-text bold-text">Privacy Policy</h5>
+                    <p class="long-text">Lamami AI values your privacy and is committed to protecting your personal data. This
+                        Privacy Policy outlines how we collect, use, store, and protect the information you provide
+                        while using our services.
+                        </p>
+                    <h5 class="white-text bold-text">Data Collection</h5>
+                    <p class="white-text">We collect the following data:
+                    </p>
+                    <h6 class="white-text">Personal Information</h6>
+                    <p class="long-text">Name, email, phone number, and organization details</p>
+                    <h6 class="white-text">Interaction Data</h6>
+                    <p class="long-text">Chat history, user feedback, and feature usage metrics.
+                    </p>
+                    <h6 class="white-text">Payment Information</h6>
+                    <p class="long-text">(If applicable) Securely processed by third-party providers.
+                    </p>
+                    <h5 class="white-text bold-text">Data Usage</h5>
+                    <p class="white-text">We use your data to:
+                    </p>
+                    <p class="long-text">Deliver and improve our chatbot services.</p>
+                    <p class="long-text">Provide customer support and updates.
+                    </p>
+                    <p class="long-text">Analyze performance and user interactions.
+                    </p>
+                    <h5 class="white-text bold-text">Data Storage</h5>
+                    <p class="long-text">Data is securely stored on encrypted servers compliant with global data protection
+                        standards.
+                        </p>
+                    <p class="long-text">User data is retained only as long as necessary for service delivery or as required by law.</p>
+                    <h5 class="white-text bold-text">Data Protection</h5>
+                    <p class="long-text">We implement measures like encryption, secure access controls, and regular audits to
+                        safeguard your information</p>
+                    <p class="long-text">Our staff is trained to handle data in compliance with confidentiality agreements</p>
+                    <h5 class="white-text bold-text">Sharing of Data</h5>
+                    <p class="white-text">We do not sell or share your data with third parties except:</p>
+                    <p class="long-text">When required by law.
+                    </p>
+                    <p class="long-text">With trusted partners essential for service delivery (e.g., payment processors).</p>
+                    <h5 class="white-text bold-text">Your rights</h5>
+                    <p class="long-text">Access your data: Request a copy of your data at any time.
+                    </p>
+                    <p class="long-text">Modify or delete your data: Contact us to update or erase your records.</p>
+                    <h5 class="white-text bold-text">Updates to the policy</h5>
+                    <p class="long-text">Lamami AI may update this Privacy Policy periodically. Users will be notified of any changes
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="modal black center" id="terms-of-service">
+            <div class="container">
+                <div class="modal-content">
+                    <h4 class="purple-text text-darken-4 bold-text">LAMAMI-AI's</h4>
+                    <h5 class="white-text bold-text">Terms of Service</h5>
+                    <p class="long-text">By using Lamami AI’s services, you agree to these Terms of Service. If you do not agree,
+                        please refrain from using our services.
+                        </p>
+                    <h5 class="white-text bold-text">Service Description</h5>
+                    <p class="long-text">Lamami AI provides AI-powered chatbot solutions to schools and businesses. Services
+                        include but are not limited to:                        
+                    </p>
+                    <p class="long-text">Automated customer interactions.
+                    </p>
+                    <p class="long-text">Workflow optimization tools.
+                    </p>
+                    <h5 class="white-text bold-text">User Responsibilities</h5>
+                    <p class="long-text">Provide accurate and updated information during service setup.
+                    </p>
+                    <p class="long-text">Use the chatbot only for lawful purposes.
+                    </p>
+                    <p class="long-text">Refrain from unauthorized access or misuse of our systems.
+                    </p>
+                    <h5 class="white-text bold-text">Payment Terms</h5>
+                    <p class="long-text">Payments must be completed before service deployment.
+                        </p>
+                    <p class="long-text">Refunds are processed on a case-by-case basis if services are unsatisfactory.</p>
+                    <h5 class="white-text bold-text">Data Usage and Ownership</h5>
+                    <p class="long-text">Users retain ownership of the data shared with Lamami AI.</p>
+                    <p class="long-text">By using our services, you grant Lamami AI the right to process your data to deliver
+                        services.
+                        </p>
+                    <h5 class="white-text bold-text">Limitations of Liability</h5>
+                    <p class="white-text">Lamami AI is not liable for:</p>
+                    <p class="long-text">Indirect or consequential damages arising from service use.
+                    </p>
+                    <p class="long-text">Issues caused by user-provided data or third-party integrations</p>
+                    <h5 class="white-text bold-text">Service Modifications</h5>
+                    <p class="long-text">Lamami AI reserves the right to modify or discontinue services with prior notice to users.
+                    </p>
+                    <h5 class="white-text bold-text">Termination</h5>
+                    <p class="long-text">We reserve the right to terminate services for users who breach these terms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer" style="background-color: rgb(9, 9, 9);">
+        <div class="footer-copyright" style="background-color: rgb(9, 9, 9);">
+            <div class="container center">
+                <h6 class="bold-text purple-text text-darken-4">&copy;2024 LamamiAI, All rights reserved.</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="./JS/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slider({
+                height: 500,
+                interval: 6000,
+                indicators: false,
+            });
+                $('.tooltipped').tooltip();
+                $(".collapsible").collapsible();
+                $('.carousel').carousel();
+                $('.scrollspy').scrollSpy();
+                $('.modal').modal();
+        });
+    </script>
+    <script>
+        const toggle_btn = document.querySelectorAll(".toggle");
+        const main = document.querySelector("main");
+        let header = document.getElementById("heading")
+
+        toggle_btn.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                main.classList.toggle("Switch");
+            });
+        });
+
+        toggle_btn.onclick = function(){
+            header.textContent = "Sign In";
+        }
+    </script>
+</body>
+</html>
